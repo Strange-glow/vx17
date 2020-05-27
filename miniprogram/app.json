@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/collection/collection",
+    "pages/catogory/catogory"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFAA",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFF37",
+    "navigationBarTitleText": "iFilms",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color":"#000",
+    "selectedColor":"#f4ea2a",
+    "borderStyle":"black",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "推荐",
+      "iconPath": "icons/index1.png",
+      "selectedIconPath": "icons/index2.png"
+    },
+    {
+      "pagePath": "pages/catogory/catogory",
+      "text": "分类",
+      "iconPath": "icons/cato1.png",
+      "selectedIconPath": "icons/cato2.png"
+    },
+    {
+      "pagePath": "pages/collection/collection",
+      "text": "收藏",
+      "iconPath": "icons/collec1.png",
+      "selectedIconPath": "icons/collec2.png"
+    }
+  ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
