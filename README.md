@@ -9,7 +9,7 @@
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
-//
+//111
 目前首页里面的东西都是创建的时候自带的。除了下面三个网页以外应该都是要删掉的以后。
 我修改了顶部的一些样式pages里面的index,catogory,collection三个页面是我想的以后主要用得到的：
 - 首页即推送功能，可以随机推荐电影，就不考虑啥推荐算法了；我加了一个下拉刷新功能，但是还没写代码，我想的是下拉就推荐一个新的；

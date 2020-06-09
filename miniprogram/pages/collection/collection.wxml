@@ -1,2 +1,17 @@
-<!--pages/collection/collection.wxml-->
-<text>pages/collection/collection.wxml</text>
+<view class="user_bg">
+  <view class="user_un" wx:if="{{!openid}}">
+    <button open-type="getUserInfo" lang="zh_CN"
+    bindgetuserinfo="onGotUserInfo">登录</button>
+  </view>
+
+
+
+  <view class="user_on" wx:if="{{openid}}">
+    <view class="user_img">
+      <image class="image" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="user_info">
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
