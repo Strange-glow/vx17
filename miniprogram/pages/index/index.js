@@ -26,9 +26,26 @@ Page({
         })
     })
   },
-  onChange: function(){
+  onChange: function(e){
     //收藏按钮触发事件
     //todo
+    const videoId = e.currentTarget.dataset.id
+    console.log("videoId",videoId)
+    const ui = wx.getStorageSync('userInfo')
+    if(!ui.openid){
+      wx.switchTab({
+        url: '/pages/collection/collection',
+      })
+    }else{
+      wx.cloud.callFunction({
+        name:"addCollection",
+        data:{
+          videoId: videoId,
+          openid:ui.openid,
+          date:Date.now()
+        }
+      })
+    }
   },
   navigateToInfo: function(e){
     wx.navigateTo({

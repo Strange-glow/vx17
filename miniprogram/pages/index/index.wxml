@@ -9,8 +9,8 @@
   <view bindtap="navigateToInfo" data-id="{{item._id}}" style="color:#C0C0C0;">详情<van-icon name="arrow" color="#c0c0c0"/>
   </view>
   </view>
-  <view slot="footer">
-    <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
+  <view slot="footer" bindtap="onChange" data-id="{{item._id}}">
+    <van-button round icon="star-o" size="small"  block>收藏</van-button>
   </view>
 </van-panel>
 </block>

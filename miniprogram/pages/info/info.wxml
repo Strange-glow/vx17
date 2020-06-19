@@ -16,8 +16,8 @@
   </text>
   </view>
   </view>
-  <view slot="footer">
-     <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
+  <view slot="footer" bindtap="onChange" data-id="{{movies._id}}">
+     <van-button round icon="star-o" size="small" block >收藏</van-button>
   </view>
 </van-panel>
 

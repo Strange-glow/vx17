@@ -22,9 +22,9 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false,
+		"useIsolateContext": true,
 		"compileHotReLoad": false
 	},
 	"appid": "wx290303732942205e",
