@@ -1,0 +1,18 @@
+<view class="video_warp">
+   <navigator url="../details/details?id={{item._id}}" class="video_item" wx:for="{{Films}}" wx:key="index" wx:if="{{item.type=='悬疑'}}">
+       <!--left-->
+       <view class="video_img">
+          <image src="{{item.pic}}" ></image>
+       </view>
+       <!--right-->
+       <view class="video_info">
+          <view class="video_detail">
+               <text class="video_name">
+               {{item.name}}</text>
+               <text class="video_points" >
+               {{item.points}}</text>
+          </view>
+          <view class="video_intro">{{item.intro}}</view>
+       </view>
+     </navigator>
+</view> 

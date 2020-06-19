@@ -1,0 +1,21 @@
+<view class="film">
+    <view class="film_item_detail" wx:for="{{Films}}" wx:key="index" wx:if="{{item._id==videoId}}">
+       <view class="film_title">{{item.name}}</view>
+       <!--left pic-->
+       <view class="film_block">
+         <view class="film_img">
+           <image src="{{item.pic}}" ></image>
+         </view>
+         <!--right date-->
+         <view class="film_info">
+           <view class="film_detail">
+               <text class="film_point">{{item.points}}</text>
+               <button class="film_collect">收藏</button>
+           </view>
+        </view>
+        <!--film intro-->
+       </view>
+       <view class="film_date" >{{item.date}}</view>
+       <view class="film_intro">{{item.intro}}</view>
+    </view>
+</view>

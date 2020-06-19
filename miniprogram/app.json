@@ -1,8 +1,21 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/collection/collection",
-    "pages/catogory/catogory"
+
+    "pages/catogory/catogory",
+    "pages/page1/page1",
+    "pages/page2/page2",
+    "pages/page3/page3",
+    "pages/page4/page4",
+    "pages/page5/page5",
+    "pages/page6/page6",
+    "pages/page7/page7",
+    "pages/page8/page8",
+    "pages/page9/page9",
+    "pages/details/details",
+   
+    "pages/collection/collection"
+   
   ],
   "window": {
     "backgroundColor": "#FFFFAA",

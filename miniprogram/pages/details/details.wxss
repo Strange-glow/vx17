@@ -1,0 +1,51 @@
+.film{
+  margin-top: 10rpx;
+}
+.film_item_detail{
+  padding:10rpx;
+}
+.film_title{
+  padding:10rpx;
+  font-size: 50rpx;
+}
+.film_block{
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.film_img{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.film_img image{
+  width: 90%;
+  height: 500rpx;
+  border-radius: 15rpx;
+}
+.film_info{
+  width: 40%;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+}
+.film_detail{
+  display: flex;
+  justify-content: space-between;
+}
+.film_point{
+  font-size: 35rpx;
+  color: #000;
+}
+.film_date{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 40rpx;
+  color: #666;
+}
+
+.film_intro{
+  padding-top: 10rpx;
+  font-size: 38rpx;
+}
