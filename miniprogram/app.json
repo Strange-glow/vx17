@@ -14,8 +14,9 @@
     "pages/page9/page9",
     "pages/details/details",
    
-    "pages/collection/collection"
-   
+    "pages/collection/collection",
+    "pages/info/info",
+    "pages/searchlist/searchlist"
   ],
   "window": {
     "backgroundColor": "#FFFFAA",
@@ -23,33 +24,42 @@
     "navigationBarBackgroundColor": "#FFFF37",
     "navigationBarTitleText": "iFilms",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh":true
+    "enablePullDownRefresh": true
   },
   "tabBar": {
-    "color":"#000",
-    "selectedColor":"#f4ea2a",
-    "borderStyle":"black",
+    "color": "#000",
+    "selectedColor": "#f4ea2a",
+    "borderStyle": "black",
     "list": [
       {
-      "pagePath": "pages/index/index",
-      "text": "推荐",
-      "iconPath": "icons/index1.png",
-      "selectedIconPath": "icons/index2.png"
-    },
-    {
-      "pagePath": "pages/catogory/catogory",
-      "text": "分类",
-      "iconPath": "icons/cato1.png",
-      "selectedIconPath": "icons/cato2.png"
-    },
-    {
-      "pagePath": "pages/collection/collection",
-      "text": "我的",
-      "iconPath": "icons/collec1.png",
-      "selectedIconPath": "icons/collec2.png"
-    }
-  ]
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "icons/index1.png",
+        "selectedIconPath": "icons/index2.png"
+      },
+      {
+        "pagePath": "pages/catogory/catogory",
+        "text": "分类",
+        "iconPath": "icons/cato1.png",
+        "selectedIconPath": "icons/cato2.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "我的",
+        "iconPath": "icons/collec1.png",
+        "selectedIconPath": "icons/collec2.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-rate": "@vant/weapp/rate/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index"
+  }
 }
