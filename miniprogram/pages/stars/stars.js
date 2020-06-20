@@ -1,9 +1,10 @@
 // pages/stars/stars.js
 const db = wx.cloud.database()
 const filmsCollection=db.collection('Collection')
+const allFilms=db.collection("Films")
 Page({
  data:{
-    stars:[]
+    s:[]
  },
 getStars:function(){
   const ui  =wx.getStorageSync('userInfo')
@@ -17,7 +18,7 @@ getStars:function(){
       console.log("云函数调用成功")
       console.log("res",res)
       that.setData({
-        stars:res.result.data
+        star:res.data
       })
     },
     fail:res=>{
@@ -25,8 +26,41 @@ getStars:function(){
     },
   })
 },
-onShow:function(){
-  this.getStars()
-}
+onLoad:function(options){
+  const ui  =wx.getStorageSync('userInfo')
+  var Film=[]
+  var userFilm=[]
+  var starred=[]
+  filmsCollection.get().then(res=>{
+    console.log(res)
+    for (let j = 0; j < res.data.length; j++) {
+      if(res.data[j].openid==ui.openid)
+      Film.push(res.data[j])
+    }
+    this.setData({
+      starred:Film
+    })
+   
+
+  })
+  allFilms.get().then(res=>{
+    console.log(res)
+    for(let i=0;i<starred.length;i++)
+    for (let j = 0; j < res.data.length; j++) {
+      if(res.data[j]._id==starred[i].videoId)
+      userFilm.push(res.data[j])
+    }
+    this.setData({
+      finalOne:userFilm
+    })
+   
+
+  })
+      
+  },
+
+// onShow:function(){
+//   this.getStars()
+// }
 
 })
