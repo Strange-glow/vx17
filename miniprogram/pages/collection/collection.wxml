@@ -1,24 +1,14 @@
 
-<view class="user_bg">
-  <view class="user_un" wx:if="{{!openid}}">
-    <button open-type="getUserInfo" lang="zh_CN"
-    bindgetuserinfo="onGotUserInfo">登录</button>
-  </view>
+<view  wx:if="{{!openid}}">
+  <button open-type="getUserInfo" lang="zh_CN"
+  bindgetuserinfo="onGotUserInfo">登录</button>
 </view>
 
+ <view class="uploader-container" wx:if="{{openid}}">
+    <image class="image" src="{{userInfo.avatarUrl}}"></image>
+    <view class="name">{{userInfo.nickName}}</view>
+    <van-button type="primary" block bind:click="navigateToMyStars">我的收藏</van-button>
+ </view>
 
- <block wx:for="{{collection}}" wx:key="key">
-    <view class="user_on" wx:if="{{openid}}">
-      <view class="user_img">
-        <image class="image" src="{{userInfo.avatarUrl}}"></image>
-      </view>
-    </view>
-    <view class="user_info">
-      <text>{{userInfo.nickName}}</text>
-    </view>
- 
-    <view class="collection-item">
-    电影id：{{item.videoId}} 收藏时间：{{item.date}}
-    </view>
-</block>
+
 
