@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/collection/collection",
     "pages/index/index",
-
+    "pages/collection/collection",
     "pages/catogory/catogory",
     "pages/page1/page1",
     "pages/page2/page2",
@@ -60,6 +59,7 @@
     "van-panel": "@vant/weapp/panel/index",
     "van-button": "@vant/weapp/button/index",
     "van-icon": "@vant/weapp/icon/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-card": "@vant/weapp/card/index"
   }
 }

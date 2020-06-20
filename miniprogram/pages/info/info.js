@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shows:[],
     isCollected: false
   },
   onChange: function(e){
@@ -38,10 +39,14 @@ Page({
      await filmsCollection.where({
        _id:options.id
      }).get().then(res=>{
-       this.setData({
-         movies: res.data[0]
-       })
+      res.data[0].points=parseFloat(res.data[0].points.substring(5))
+      res.data[0].intro=res.data[0].intro.substring(5)
+      this.data.shows=res.data[0]
      })
+     console.log(this.data.shows)
+     this.setData({
+      movies: this.data.shows
+    })
   },
 
   /**

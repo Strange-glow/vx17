@@ -26,27 +26,6 @@ Page({
         })
     })
   },
-  onChange: function(e){
-    //收藏按钮触发事件
-    //todo
-    const videoId = e.currentTarget.dataset.id
-    console.log("videoId",videoId)
-    const ui = wx.getStorageSync('userInfo')
-    if(!ui.openid){
-      wx.switchTab({
-        url: '/pages/collection/collection',
-      })
-    }else{
-      wx.cloud.callFunction({
-        name:"addCollection",
-        data:{
-          videoId: videoId,
-          openid:ui.openid,
-          date:Date.now()
-        }
-      })
-    }
-  },
   navigateToInfo: function(e){
     wx.navigateTo({
       url: '../info/info?id='+e.currentTarget.dataset.id
@@ -88,7 +67,9 @@ Page({
   var length=178
   while(s.size<4){
     var num=Math.floor(Math.random()*length)+1
-    while (s.has(num)) num=Math.floor(Math.random()*length)+1
+    while (s.has(num)) {num=Math.floor(Math.random()*length)+1
+      console.log("repeat")
+    }
     s.add(num)
     var id = this.pad(num)
     await filmsCollection.where({
