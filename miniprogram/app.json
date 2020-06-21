@@ -1,8 +1,8 @@
 {
   "pages": [
-   
-    "pages/index/index",
     "pages/collection/collection",
+    "pages/index/index",
+    
     "pages/catogory/catogory",
     "pages/page1/page1",
     "pages/page2/page2",

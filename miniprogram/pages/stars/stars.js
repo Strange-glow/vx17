@@ -3,6 +3,7 @@ const db = wx.cloud.database()
 const filmsCollection=db.collection('Collection')
 const allFilms=db.collection("Films")
 Page({
+
   data:{
     s:[],
     logs:[]
@@ -43,6 +44,7 @@ Page({
             // })
           }) 
         }
+
       }
     })
 
