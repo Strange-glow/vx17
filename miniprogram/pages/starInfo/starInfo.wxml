@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="list">
+          <view class="left" style="width:40%;height:420rpx">
+            <image src="{{movies.pic}}" style="height:420rpx" />
+          </view>
+            <view class="right" style="width:60%;height:420rpx">
+                <view class="row">
+                  <text style="font-size:20px;font-weight:bold">{{movies.name}} </text>
+                </view>
+                <view class="row">
+                  评分：<van-rate readonly value="{{movies.points}}" allow-half />
+                </view>
+                <view class="row">
+                  {{movies.date}}
+                </view>
+            </view>
+    </view>
+    <view class="story">
+      <text class="story-title">剧情简介</text>
+      <view class="story-detail">{{movies.intro}}</view>
+    </view>
+    <view class='aa'>
+   <text class='bb'>已收藏</text>
+    </view>
+</view>

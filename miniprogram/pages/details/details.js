@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-   
+   videoId:''
 
   },
 
@@ -37,7 +37,10 @@ Page({
   onChange: function(e){
     //收藏按钮触发事件
     //todo
-    const videoId = e.currentTarget.dataset._id
+    this.setData({
+      videoId:this.e.currentTarget.dataset.id
+    })
+
     console.log("videoId",videoId)
     const ui = wx.getStorageSync('userInfo')
     if(!ui.openid){

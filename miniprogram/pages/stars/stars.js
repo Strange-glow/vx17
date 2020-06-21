@@ -6,11 +6,13 @@ Page({
 
   data:{
     s:[],
-    logs:[]
+    logs:[],
+    final:[],
+    flag:false
   },
   navigateToInfo: function(e){
     wx.navigateTo({
-      url: '../info/info?id='+e.currentTarget.dataset.id
+      url: '../starInfo/starInfo?id='+e.currentTarget.dataset.id
     })
   },
   getlogs:function(){
@@ -46,10 +48,30 @@ Page({
         }
 
       }
+      // starred.push(userFilm[0])
+    for(let i=0;i<userFilm.length;i++){
+      // that.setData({
+      //   flag:false
+      // })
+      // for(let j=0;j<starred.length;j++){
+      //     if(logs[i].videoId==starred[j].videoId){
+      //       that.setData({
+      //         flag:true
+      //       })
+      //     }
+      // }
+      if(starred.findIndex(userFilm[i])>=0)
+        console.log("已存在")
+      else
+        starred.push(userFilm[i])
+     
+    }
+    
     })
-
+    
     console.log("Film",Film)
     console.log("userFilm",userFilm)
+    console.log("starred",starred)
   },
 
   onShow:function(){
