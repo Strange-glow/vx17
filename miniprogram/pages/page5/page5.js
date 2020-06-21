@@ -15,11 +15,12 @@ Page({
   onLoad: function (options) {
     var total=178;
     const batchTimes = Math.ceil(total / 20)
-     var Film=[]          
+    var Film=[]          
     
     for (let i = 0; i < batchTimes; i++) {
       db.collection('Films').skip(i*20).get().then(res=>{
         for (let j = 0; j < res.data.length; j++) {
+            res.data[j].points=parseFloat(res.data[j].points.substring(5))
             Film.push(res.data[j])
           }
           this.setData({

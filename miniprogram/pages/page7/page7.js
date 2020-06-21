@@ -19,6 +19,7 @@ Page({
     for (let i = 0; i < batchTimes; i++) {
       db.collection('Films').skip(i*20).get().then(res=>{
         for (let j = 0; j < res.data.length; j++) {
+            res.data[j].points=parseFloat(res.data[j].points.substring(5))
             Film.push(res.data[j])
           }
           this.setData({

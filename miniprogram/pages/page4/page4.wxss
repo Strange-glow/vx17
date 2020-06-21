@@ -33,6 +33,7 @@
 }
 .video_name{
   font-size: 35rpx;
+  font-weight: bolder;
   color: #000;
 }
 .video_points{
