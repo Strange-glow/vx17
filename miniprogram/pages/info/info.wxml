@@ -23,7 +23,15 @@
       <text class="story-title">剧情简介</text>
       <view class="story-detail">{{movies.intro}}</view>
     </view>
+    <block wx:if="{{condition < 1}}">
     <view class="button" bindtap="onChange" data-id="{{movies._id}}">
     <van-button round icon="star-o" size="small" block >收藏</van-button>
     </view>
+  </block>
+
+  <block wx:if="{{condition > 0}}">
+    <view class='aa' bindtap="offChange" data-id="{{movies._id}}">
+    <text class='bb'>已收藏</text>
+    </view>
+  </block>
 </view>

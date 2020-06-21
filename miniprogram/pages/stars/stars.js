@@ -13,7 +13,7 @@ Page({
   },
   navigateToInfo: function(e){
     wx.navigateTo({
-      url: '../starInfo/starInfo?id='+e.currentTarget.dataset.id
+      url: '../info/info?id='+e.currentTarget.dataset.id
     })
   },
  func:async function(){
