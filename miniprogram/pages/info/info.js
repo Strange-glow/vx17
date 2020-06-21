@@ -105,6 +105,7 @@ Page({
           this.setData({
             condition: 1
            })
+
            console.log("已存在收藏")
          }
        }
