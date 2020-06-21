@@ -2,7 +2,7 @@
 <view class='aa'>
    <text class='bb'>我的收藏</text>
 </view>
-<block wx:for="{{logs}}">
+<block wx:for="{{final}}" wx:key="key">
 <van-panel  title="{{item.name}}" desc="类型: {{item.type}}" use-footer-slot>
   
   <view class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}">

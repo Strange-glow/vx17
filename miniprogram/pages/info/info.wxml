@@ -1,26 +1,6 @@
-<!-- <van-panel title="{{movies.name}}" status="类型: {{movies.type}}"  use-footer-slot>
-  <view>
-  <view style=" display: flex;align-items: center;justify-content: center;">
-  <van-image
-  width="18rem"
-  height="18rem"
-  fit="cover"
-  src="{{movies.pic}}"
-/>
-  </view>
-  <view style="font-size: 15px;padding:15px;">
-  <text>
-  {{movies.date}}
-  </text>
-  <text style="font-style:italic;">
-  {{movies.intro}}
-  </text>
-  </view>
-  </view>
-  <view slot="footer" bindtap="onChange" data-id="{{movies._id}}">
-     <van-button round icon="star-o" size="small" block >收藏</van-button>
-  </view>
-</van-panel> -->
+
+
+
 <!--pages/movie/movie-details/movie-details.wxml-->
 <view class="page">
     <view class="list">
@@ -43,7 +23,7 @@
       <text class="story-title">剧情简介</text>
       <view class="story-detail">{{movies.intro}}</view>
     </view>
-    <view class="button">
-    <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
-    </view>
+    <view slot="footer" bindtap="onChange" data-id="{{movies._id}}">
+     <van-button round icon="star-o" size="small" block >收藏</van-button>
+  </view>
 </view>

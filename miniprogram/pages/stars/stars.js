@@ -2,6 +2,7 @@
 const db = wx.cloud.database()
 const filmsCollection=db.collection('Collection')
 const allFilms=db.collection("Films")
+
 Page({
 
   data:{
@@ -15,67 +16,56 @@ Page({
       url: '../starInfo/starInfo?id='+e.currentTarget.dataset.id
     })
   },
-  getlogs:function(){
-    const that = this
-    const ui = wx.getStorageSync('userInfo')
-    var Film=[]
-    var userFilm=[]
-    var starred=[]
-    filmsCollection.get().then(res=>{
-      console.log(res)
-      for (let j = 0; j < res.data.length; j++) {
-        if(res.data[j].openid==ui.openid)
-          Film.push(res.data[j])
+ func:async function(){
+   
+   const that=this
+   var Film=[]
+   var userFilm=[]
+   var len=0
+   var ids=[]
+  const ui = wx.getStorageSync('userInfo')
+  wx.cloud.callFunction({
+    name:"getS",
+    data:{
+      openid:ui.openid
+    },
+    success:res=>{
+      console.log("res",res)
+      that.setData({
+        logs:res.result.data
+        
+      })
+      for(let i=0;i<res.result.data.length;i++){
+        Film.push(res.result.data[i])
       }
-        // this.setData({
-        //   starred:Film
-        // })
+      console.log("film",Film)
       for(let k=0;k<Film.length;k++){
         for (let i = 0; i < 9; i++) {
           allFilms.skip(i*20).get().then(res=>{
             for (let j = 0; j < res.data.length; j++) {
-                if(Film[k].videoId==res.data[j]._id){
+                if(Film[k].videoId==res.data[j]._id && ids.indexOf(res.data[j]._id)==-1){
                   userFilm.push(res.data[j])
+                  ids.push(res.data[j]._id)
+                  len=userFilm.length
                   that.setData({
-                    logs:userFilm
+                    final:userFilm
                   })
                 }
             }
-            // this.setData({
-            //   starred:userFilm
-            // })
           }) 
+          //console.log("ids",ids)
+          console.log("len",len)
         }
-
-      }
-      // starred.push(userFilm[0])
-    for(let i=0;i<userFilm.length;i++){
-      // that.setData({
-      //   flag:false
-      // })
-      // for(let j=0;j<starred.length;j++){
-      //     if(logs[i].videoId==starred[j].videoId){
-      //       that.setData({
-      //         flag:true
-      //       })
-      //     }
-      // }
-      if(starred.findIndex(userFilm[i])>=0)
-        console.log("已存在")
-      else
-        starred.push(userFilm[i])
-     
+       }
+    },
+    fail:res=>{
+      console.log("失败")
     }
-    
-    })
-    
-    console.log("Film",Film)
-    console.log("userFilm",userFilm)
-    console.log("starred",starred)
-  },
+  })
+ },
 
   onShow:function(){
-    this.getlogs()
+    this.func()
   }
 
 })
