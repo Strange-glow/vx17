@@ -26,10 +26,6 @@ Page({
         })
     })
   },
-  onChange: function(){
-    //收藏按钮触发事件
-    //todo
-  },
   navigateToInfo: function(e){
     wx.navigateTo({
       url: '../info/info?id='+e.currentTarget.dataset.id
@@ -71,7 +67,9 @@ Page({
   var length=178
   while(s.size<4){
     var num=Math.floor(Math.random()*length)+1
-    while (s.has(num)) num=Math.floor(Math.random()*length)+1
+    while (s.has(num)) {num=Math.floor(Math.random()*length)+1
+      console.log("repeat")
+    }
     s.add(num)
     var id = this.pad(num)
     await filmsCollection.where({

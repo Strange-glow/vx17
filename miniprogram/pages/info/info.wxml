@@ -1,9 +1,10 @@
-<van-panel title="{{movies.name}}" status="类型: {{movies.type}}"  use-footer-slot>
+<!-- <van-panel title="{{movies.name}}" status="类型: {{movies.type}}"  use-footer-slot>
   <view>
   <view style=" display: flex;align-items: center;justify-content: center;">
   <van-image
-  width="10rem"
-  height="10rem"
+  width="18rem"
+  height="18rem"
+  fit="cover"
   src="{{movies.pic}}"
 />
   </view>
@@ -16,8 +17,33 @@
   </text>
   </view>
   </view>
-  <view slot="footer">
-     <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
+  <view slot="footer" bindtap="onChange" data-id="{{movies._id}}">
+     <van-button round icon="star-o" size="small" block >收藏</van-button>
   </view>
-</van-panel>
-
+</van-panel> -->
+<!--pages/movie/movie-details/movie-details.wxml-->
+<view class="page">
+    <view class="list">
+          <view class="left" style="width:40%;height:420rpx">
+            <image src="{{movies.pic}}" style="height:420rpx" />
+          </view>
+            <view class="right" style="width:60%;height:420rpx">
+                <view class="row">
+                  <text style="font-size:20px;font-weight:bold">{{movies.name}} </text>
+                </view>
+                <view class="row">
+                  评分：<van-rate readonly value="{{movies.points}}" allow-half />
+                </view>
+                <view class="row">
+                  {{movies.date}}
+                </view>
+            </view>
+    </view>
+    <view class="story">
+      <text class="story-title">剧情简介</text>
+      <view class="story-detail">{{movies.intro}}</view>
+    </view>
+    <view class="button">
+    <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
+    </view>
+</view>

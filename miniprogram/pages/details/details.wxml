@@ -10,7 +10,7 @@
          <view class="film_info">
            <view class="film_detail">
                <text class="film_point">{{item.points}}</text>
-               <button class="film_collect">收藏</button>
+               <button class="film_collect" bindtap="onChange" data-id="{{item._id}}">收藏</button>
            </view>
         </view>
         <!--film intro-->

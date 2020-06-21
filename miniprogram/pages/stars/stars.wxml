@@ -1,0 +1,14 @@
+<!--pages/stars/stars.wxml-->
+
+<view>
+  我的收藏
+</view>
+
+<block wx:for="{{logs}}">
+  <view class="log-item">
+    电影名：{{item.name}}
+
+  </view>
+  <view bindtap="navigateToInfo" data-id="{{item._id}}" style="color:#C0C0C0;">详情<van-icon name="arrow" color="#c0c0c0"/>
+  </view>
+</block>

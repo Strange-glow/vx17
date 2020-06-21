@@ -20,46 +20,47 @@ Page({
     var index=e.target.dataset.index;
     var str=this.data.navList[index].type;
     if(index==0){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../catogory/catogory' //恐怖
       })
     }else if(index==1){
-    wx.redirectTo({
-      url:'../page1/page1' //恐怖
+      wx.navigateTo({
+        url:'../page1/page1' //恐怖
     })
     }else if(index==2){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page2/page2' //犯罪
       })
     }else if(index==3){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page3/page3' //战争
       })
     }else if(index==4){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page4/page4' //武侠
       })
     }else if(index==5){
-      wx.nredirectTo({
+      wx.navigateTo({
         url:'../page5/page5'  //喜剧
       })
     }else if(index==6){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page6/page6' //爱情
       })
     }else if(index==7){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page7/page7' //科幻
       })
     }else if(index==8){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page8/page8'  //动作
       })
     }else if(index==9){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../page9/page9'  //悬疑
       })
     }
+   
   
   },
 

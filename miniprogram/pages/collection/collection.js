@@ -1,7 +1,15 @@
+const db = wx.cloud.database()
+const MyStars=db.collection('Collection')
 Page({
   data:{
     userInfo:{},
     openid:"",
+    collection: []
+  },
+  navigateToMyStars:function(event){
+    wx.navigateTo({
+      url: '../stars/stars',
+    })
   },
   onGotUserInfo:function(e){
     const that=this
@@ -16,9 +24,29 @@ Page({
         that.data.userInfo.openid=that.data.openid
         console.log("userInfo",that.data.userInfo)
         wx.setStorageSync("userInfo", that.data.userInfo)
+        //this.getCollection()
       },
       fail:res=>{
         console.log("云函数调用失败")
+      }
+    })
+  },
+  getCollection:function(){
+    const that = this
+    const ui = wx.getStorageSync('userInfo')
+    wx.cloud.callFunction({
+      name:"getCollection",
+      data:{
+        openId:ui.openId
+      },
+      success:res=>{
+        console.log("res",res)
+        that.setData({
+          collection:res.result.data
+        })
+      },
+      fail: res=>{
+        console.log("res",res)
       }
     })
   },
@@ -29,5 +57,6 @@ Page({
       // 1111
       openid:ui.openid
     })
+    //this.getCollection()
   }
 })

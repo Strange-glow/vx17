@@ -1,16 +1,21 @@
 <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch"/>
 <block wx:for="{{films}}">
 <van-panel  title="{{item.name}}" desc="类型: {{item.type}}" use-footer-slot>
-  <view class="van-ellipsis" bindtap="navigateToInfo" data-id="{{item._id}}" style="font-size: 15px;padding:15px;">{{item.intro}}</view>
+  
+  <view class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}">
+  <van-card
+  title="{{item.date}}"
+  thumb="{{ item.pic }}"
+>
+<view slot="desc" class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}" style="font-size: 12px;">{{item.intro}}</view>
+</van-card>
+  </view>
   <view style="display: flex;justify-content:space-between">
   <view style="font-size: 15px;padding-left:15px;">
-  评分：<van-rate readonly value="{{item.points}}" allow-half bind:change="onChange" />
+  评分：<van-rate readonly value="{{item.points}}" allow-half />
   </view>
   <view bindtap="navigateToInfo" data-id="{{item._id}}" style="color:#C0C0C0;">详情<van-icon name="arrow" color="#c0c0c0"/>
   </view>
-  </view>
-  <view slot="footer">
-    <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
   </view>
 </van-panel>
 </block>
