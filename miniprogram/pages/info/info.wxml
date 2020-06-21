@@ -43,7 +43,7 @@
       <text class="story-title">剧情简介</text>
       <view class="story-detail">{{movies.intro}}</view>
     </view>
-    <view class="button">
-    <van-button round icon="star-o" size="small" bindtap="onChange" block >收藏</van-button>
+    <view class="button" bindtap="onChange" data-id="{{movies._id}}">
+    <van-button round icon="star-o" size="small" block >收藏</van-button>
     </view>
 </view>

@@ -17,17 +17,15 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false,
-		
+		"compileHotReLoad": false,
 		"useIsolateContext": true
-	
 	},
 	"appid": "wx290303732942205e",
 	"projectname": "program",
