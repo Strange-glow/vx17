@@ -6,9 +6,9 @@
 <view style="text-align:center">
 <image class="avatar" src="{{userInfo.avatarUrl}} " wx:if="{{openid}}" mode="aspectFit"></image>
     <view class="name" wx:if="{{openid}}">{{userInfo.nickName}}</view>
-    <van-button color="#ffd700" bind:click="navigateToMyStars" wx:if="{{openid}}">我的收藏</van-button>
+    <van-button plain round color="#FFA500" bind:click="navigateToMyStars" wx:if="{{openid}}">我的收藏</van-button>
  <view  wx:if="{{!openid}}">
-  <van-button color="#ffd700"  open-type="getUserInfo" lang="zh_CN"
+  <van-button  plain round color="#FFA500"  open-type="getUserInfo" lang="zh_CN"
   bindgetuserinfo="onGotUserInfo">登录</van-button>
 </view>
 </view>

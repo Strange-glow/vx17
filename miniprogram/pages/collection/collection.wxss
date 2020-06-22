@@ -31,6 +31,6 @@
 
 button{
   background-color: yellow;
-  width: 60%;
+  width: 50%;
   margin-top: 50px;
 }
