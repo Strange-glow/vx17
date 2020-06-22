@@ -16,6 +16,11 @@ Page({
       url: '../info/info?id='+e.currentTarget.dataset.id
     })
   },
+  navigateToFind: function(event){
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },
  func:async function(){
    
    const that=this
@@ -47,6 +52,7 @@ Page({
           allFilms.skip(i*20).get().then(res=>{
             for (let j = 0; j < res.data.length; j++) {
                 if(Film[k].videoId==res.data[j]._id && ids.indexOf(res.data[j]._id)==-1){
+                  res.data[j].points=parseFloat(res.data[j].points.substring(5))
                   userFilm.push(res.data[j])
                   ids.push(res.data[j]._id)
                   len=userFilm.length
