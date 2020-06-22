@@ -30,8 +30,8 @@
   </block>
 
   <block wx:if="{{condition > 0}}">
-    <view class='aa' bindtap="offChange" data-id="{{movies._id}}">
-    <text class='bb'>已收藏</text>
+    <view class='button' bindtap="offChange" data-id="{{movies._id}}">
+    <van-button round icon="star-o" size="small" color="yellow" block >已收藏</van-button>
     </view>
   </block>
 </view>
