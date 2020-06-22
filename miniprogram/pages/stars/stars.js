@@ -23,6 +23,9 @@ Page({
    var userFilm=[]
    var len=0
    var ids=[]
+   this.setData({
+     final:[]
+   })
   const ui = wx.getStorageSync('userInfo')
   wx.cloud.callFunction({
     name:"getS",
