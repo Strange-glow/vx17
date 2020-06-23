@@ -1,16 +1,20 @@
-<view class="video_warp">
-   <navigator url="../info/info?id={{item._id}}" class="video_item" wx:for="{{Films}}" wx:key="index" wx:if="{{item.type=='犯罪'}}">
-       <!--left-->
-       <view class="video_img">
-          <image src="{{item.pic}}" ></image>
-       </view>
-       <!--right-->
-       <view class="video_info">
-          <text class="video_name">{{item.name}}</text>
-          <view style="font-size: 10px;padding-left:0px;"> 评分：
-          <van-rate readonly value="{{item.points}}" allow-half size="{{10}}" bind:change="onChange" />
-          </view>
-          <view class="video_intro">{{item.intro}}</view>
-       </view>
-     </navigator>
-</view> 
+<block wx:for="{{Films}}" wx:if="{{item.type=='犯罪'}}">
+<van-panel  title="{{item.name}}" desc="类型: {{item.type}}" use-footer-slot>
+  
+  <view class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}">
+  <van-card
+  title="{{item.date}}"
+  thumb="{{ item.pic }}"
+>
+<view slot="desc" class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}" style="font-size: 12px;">{{item.intro}}</view>
+</van-card>
+  </view>
+  <view style="display: flex;justify-content:space-between">
+  <view style="font-size: 15px;padding-left:15px;">
+  评分：<van-rate readonly value="{{item.points}}" allow-half />
+  </view>
+  <view bindtap="navigateToInfo" data-id="{{item._id}}" style="color:#C0C0C0;">详情<van-icon name="arrow" color="#c0c0c0"/>
+  </view>
+  </view>
+</van-panel>
+</block>

@@ -25,9 +25,7 @@
 		},
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false,
-		
 		"useIsolateContext": true
-	
 	},
 	"appid": "wx290303732942205e",
 	"projectname": "program",

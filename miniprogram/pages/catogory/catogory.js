@@ -9,7 +9,17 @@ Page({
   data: {
     currentIndexNav:0,
     navList:[
-      {id:0,type:"全部"},{id:1,type:"恐怖"},{id:2,type:"犯罪"},{id:3,type:"战争"},{id:4,type:"武侠"},{id:5,type:"喜剧"},{id:6,type:"爱情"},{id:7,type:"科幻"},{id:8,type:"动作"},{id:9,type:"悬疑"}],
+      [{id:0,type:"全部",prc:"../../icons/dianying.png",url:"../catogory/catogory"},
+      {id:1,type:"恐怖",prc:"../../icons/dianying.png",url:"../page1/page1"},
+      {id:2,type:"犯罪",prc:"../../icons/dianying.png",url:"../page2/page2"},
+      {id:3,type:"战争",prc:"../../icons/dianying.png",url:"../page3/page3"},
+      {id:4,type:"武侠",prc:"../../icons/dianying.png",url:"../page4/page4"}],
+      [{id:5,type:"喜剧",prc:"../../icons/dianying.png",url:"../page5/page5"},
+      {id:6,type:"爱情",prc:"../../icons/dianying.png",url:"../page6/page6"},
+      {id:7,type:"科幻",prc:"../../icons/dianying.png",url:"../page7/page7"},
+      {id:8,type:"动作",prc:"../../icons/dianying.png",url:"../page8/page8"},
+      {id:9,type:"悬疑",prc:"../../icons/dianying.png",url:"../page9/page9"}]
+    ],
     
   },
 
@@ -86,7 +96,11 @@ Page({
     }
 
   },
-
+  navigateToInfo: function(e){
+    wx.navigateTo({
+      url: '../info/info?id='+e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
