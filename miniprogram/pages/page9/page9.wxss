@@ -1,3 +1,15 @@
+.vedio_name{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #000;
+  padding-left:25rpx;
+}
+.vedio_type{
+  font-size:12px;
+  color:#c0c0c0;
+  padding-left: 25rpx;
+}
+
 .video_wrap{
   margin-top: 10rpx;
 }
@@ -31,11 +43,7 @@
   display: flex;
   justify-content: space-between;
 }
-.video_name{
-  font-size: 35rpx;
-  font-weight: bolder;
-  color: #000;
-}
+
 .video_points{
   font-size: 24rpx;
   color: #666;

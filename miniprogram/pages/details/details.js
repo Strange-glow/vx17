@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-   
+   videoId:''
 
   },
 
@@ -37,7 +37,10 @@ Page({
   onChange: function(e){
     //收藏按钮触发事件
     //todo
-    const videoId = e.currentTarget.dataset.id
+    this.setData({
+      videoId:this.e.currentTarget.dataset.id
+    })
+
     console.log("videoId",videoId)
     const ui = wx.getStorageSync('userInfo')
     if(!ui.openid){
@@ -53,6 +56,12 @@ Page({
           date:Date.now()
         }
       })
+      wx.showToast({
+        title: '收藏成功！',
+        icon: 'none',
+        duration: 1500
+      })
+      wx.hideLoading()
     }
   },
   

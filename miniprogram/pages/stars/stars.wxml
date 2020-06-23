@@ -1,14 +1,41 @@
-<!--pages/stars/stars.wxml-->
-
-<view>
-  我的收藏
+<!--miniprogram/pages/searchlist/searchlist.wxml-->
+<view class='aa'>
+<view class="content">
+    <image class='background' style="opacity:{{0.3}}" src="../../icons/bgpic.jpg" mode="aspectFit" ></image>
+</view>
+   <text class='bb'>我的收藏</text>
 </view>
 
-<block wx:for="{{logs}}">
-  <view class="log-item">
-    电影名：{{item.name}}
+<view  class="zz" wx:if="{{final.length==0}}">
+
+<text class ="zzz">
+您 还 没 有 收 藏 电 影
+</text>
+<view class = "button">
+<van-button  class = "button" plain round color="#FFA500" bind:click="navigateToFind" button>再去看看吧</van-button>
+</view>
+</view>
+
+<block wx:for="{{final}}" wx:key="key">
+<van-panel  title="{{item.name}}" desc="类型: {{item.type}}" use-footer-slot>
+  
+  <view class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}">
+  <van-card
+  title="{{item.date}}"
+  thumb="{{ item.pic }}"
+>
+<view slot="desc" class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}" style="font-size: 12px;">{{item.intro}}</view>
+</van-card>
+  </view>
+  <view style="display: flex;justify-content:space-between">
+    <view style="font-size: 15px;padding-left:15px;">
+  评分：<van-rate readonly value="{{item.points}}" allow-half />
+  </view>
+  <view  class="sp" bindtap="navigateToInfo" data-id="{{item._id}}" style="color:#C0C0C0;">详情<van-icon name="arrow" color="#c0c0c0"/>
+  </view>
+  </view>
+  <view slot="footer">
 
   </view>
-  <view bindtap="navigateToInfo" data-id="{{item._id}}" style="color:#C0C0C0;">详情<van-icon name="arrow" color="#c0c0c0"/>
-  </view>
+</van-panel>
 </block>
