@@ -3,6 +3,7 @@
   font-weight: bold;
   color: #000;
   padding-left:25rpx;
+  padding-top: 25rpx;
 }
 .vedio_type{
   font-size:12px;

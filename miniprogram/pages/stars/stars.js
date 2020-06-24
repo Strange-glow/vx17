@@ -38,7 +38,7 @@ Page({
       openid:ui.openid
     },
     success:res=>{
-      console.log("res",res)
+      //console.log("res",res)
       that.setData({
         logs:res.result.data
         
@@ -46,7 +46,7 @@ Page({
       for(let i=0;i<res.result.data.length;i++){
         Film.push(res.result.data[i])
       }
-      console.log("film",Film)
+      //console.log("film",Film)
       for(let k=0;k<Film.length;k++){
         for (let i = 0; i < 9; i++) {
           allFilms.skip(i*20).get().then(res=>{
@@ -63,7 +63,7 @@ Page({
             }
           }) 
           //console.log("ids",ids)
-          console.log("len",len)
+          //console.log("len",len)
         }
        }
     },

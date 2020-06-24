@@ -17,7 +17,7 @@
 </swiper>
 </view>
 
-<block wx:for="{{Films}}">
+<block wx:for="{{Films}}" wx:key="item">
 <van-panel  use-footer-slot>
   <view class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}">
   <van-card title="{{item.date}}" thumb="{{ item.pic }}">

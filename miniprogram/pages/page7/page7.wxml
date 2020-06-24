@@ -1,4 +1,4 @@
-<block wx:for="{{Films}}" wx:if="{{item.type=='科幻'}}">
+<block wx:for="{{Films}}" wx:key="item" wx:if="{{item.type=='科幻'}}">
 <van-panel  use-footer-slot>
   <view class="van-multi-ellipsis--l3" bindtap="navigateToInfo" data-id="{{item._id}}">
   <van-card title="{{item.date}}" thumb="{{ item.pic }}">

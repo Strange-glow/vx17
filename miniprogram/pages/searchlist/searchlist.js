@@ -20,7 +20,7 @@ Page({
    */
   onLoad: async function (options) {
     var idset=options.idset.split(',')
-    console.log(idset)
+    //console.log(idset)
     if(idset[0]==="") idset=[]
     this.setData({
       len: idset.length,
@@ -38,7 +38,7 @@ Page({
     this.setData({
       films: this.data.shows
     })
-    console.log(this.data.shows)
+    //console.log(this.data.shows)
   },
 
 })

@@ -25,8 +25,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFFF37",
     "navigationBarTitleText": "iFilms",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#000",

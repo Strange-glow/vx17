@@ -20,7 +20,7 @@ Page({
       res.data.forEach(element => {
         idset.push(element._id)
       });
-      console.log(idset)
+      //console.log(idset)
         wx.navigateTo({
           url: '../searchlist/searchlist?idset='+idset,
         })
@@ -52,7 +52,7 @@ Page({
     await filmsCollection.where({
       _id: id
     }).get().then(res=>{
-      console.log(res)  
+      //console.log(res)  
       res.data[0].points=parseFloat(res.data[0].points.substring(5))
       this.data.shows.push(res.data[0])
     })
@@ -68,14 +68,14 @@ Page({
   while(s.size<4){
     var num=Math.floor(Math.random()*length)+1
     while (s.has(num)) {num=Math.floor(Math.random()*length)+1
-      console.log("repeat")
+      //console.log("repeat")
     }
     s.add(num)
     var id = this.pad(num)
     await filmsCollection.where({
       _id: id
     }).get().then(res=>{
-      console.log(res)  
+      //console.log(res)  
       res.data[0].points=parseFloat(res.data[0].points.substring(5))
       this.data.shows.push(res.data[0])
     })

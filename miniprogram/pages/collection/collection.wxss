@@ -28,9 +28,10 @@
   font-weight: 600;
   color: rgb(0, 0, 0);
 }
-
+.login{
+  margin-top: 350rpx;
+}
 button{
-  background-color: yellow;
   width: 50%;
   margin-top: 50px;
 }

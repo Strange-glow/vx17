@@ -28,8 +28,12 @@
   padding-top: 100rpx;
   text-align: center;
 }
-.button{
-  padding-top: 100%;
+button{
+  width: 50%;
+  text-align: center;
+}
+.button2{
+  margin-top: 200rpx;
   text-align: center;
 }
 .background {
@@ -40,4 +44,16 @@
   z-index: -1;
   filter: blur(5rpx);
 
+}
+.vedio_name{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #000;
+  padding-left:25rpx;
+  padding-top: 25rpx;
+}
+.vedio_type{
+  font-size:12px;
+  color:#c0c0c0;
+  padding-left: 25rpx;
 }

@@ -16,13 +16,13 @@ Page({
     wx.cloud.callFunction({
       name:"login",
       success:res=>{
-        console.log("云函数调用成功")
+        //console.log("云函数调用成功")
         that.setData({
           openid:res.result.openid,
           userInfo:e.detail.userInfo,
         })
         that.data.userInfo.openid=that.data.openid
-        console.log("userInfo",that.data.userInfo)
+        //console.log("userInfo",that.data.userInfo)
         wx.setStorageSync("userInfo", that.data.userInfo)
         //this.getCollection()
       },
@@ -40,13 +40,13 @@ Page({
         openId:ui.openId
       },
       success:res=>{
-        console.log("res",res)
+        //console.log("res",res)
         that.setData({
           collection:res.result.data
         })
       },
       fail: res=>{
-        console.log("res",res)
+        //console.log("res",res)
       }
     })
   },

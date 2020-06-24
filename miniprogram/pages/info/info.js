@@ -14,9 +14,8 @@ Page({
   },
   onChange: function(e){
     //收藏按钮触发事件
-    //todo
     const videoId = e.currentTarget.dataset.id
-    console.log("videoId",videoId)
+    //console.log("videoId",videoId)
     const ui = wx.getStorageSync('userInfo')
     if(!ui.openid){
       wx.switchTab({
@@ -45,7 +44,7 @@ Page({
   offChange: function(e){
     //已收藏按钮触发事件
     const videoId = e.currentTarget.dataset.id
-    console.log("videoId",videoId)
+    //console.log("videoId",videoId)
     const ui = wx.getStorageSync('userInfo')
     if(!ui.openid){
       wx.switchTab({
@@ -57,14 +56,14 @@ Page({
       }).get().then(res=>{
         for(let j = 0; j < res.data.length; j++) {
           if (res.data[j].openid == ui.openid){
-            console.log(res.data[j])
+            //console.log(res.data[j])
             wx.cloud.callFunction({
               name:"delCollection",
               data:{
                 _id:res.data[j]._id
               }
             })
-            console.log("已删除")
+            //console.log("已删除")
             break
           }
         }
@@ -106,12 +105,12 @@ Page({
             condition: 1
            })
 
-           console.log("已存在收藏")
+           //console.log("已存在收藏")
          }
        }
      })
 
-     console.log(this.data.shows)
+     //console.log(this.data.shows)
      this.setData({
       movies: this.data.shows
     })
