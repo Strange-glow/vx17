@@ -39,7 +39,6 @@
 .story-detail{
   text-indent:2em;
   margin-top:10rpx;
-  font-style: italic;
 }
 .button{
   display:flex;

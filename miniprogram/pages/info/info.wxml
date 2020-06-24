@@ -9,7 +9,7 @@
           </view>
             <view class="right" style="width:60%;height:420rpx">
                 <view class="row">
-                  <text style="font-size:20px;font-weight:bold">{{movies.name}} </text>
+                  <text style="font-size:25px;font-weight:bold">{{movies.name}} </text>
                 </view>
                 <view class="row">
                   评分：<van-rate readonly value="{{movies.points}}" allow-half />
@@ -31,7 +31,7 @@
 
   <block wx:if="{{condition > 0}}">
     <view class='button' bindtap="offChange" data-id="{{movies._id}}">
-    <van-button round icon="star-o" size="small" color="yellow" block >已收藏</van-button>
+    <van-button plain round icon="star-o" size="small" color="#FFA500" block >已收藏</van-button>
     </view>
   </block>
 </view>
