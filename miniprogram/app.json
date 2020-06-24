@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/collection/collection",
     "pages/index/index",
     "pages/catogory/catogory",

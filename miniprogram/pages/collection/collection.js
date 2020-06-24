@@ -4,7 +4,8 @@ Page({
   data:{
     userInfo:{},
     openid:"",
-    collection: []
+    collection: [],
+    loginned:false
   },
   navigateToMyStars:function(event){
     wx.navigateTo({
@@ -20,6 +21,9 @@ Page({
         that.setData({
           openid:res.result.openid,
           userInfo:e.detail.userInfo,
+        })
+        that.setData({
+          loginned:true
         })
         that.data.userInfo.openid=that.data.openid
         //console.log("userInfo",that.data.userInfo)

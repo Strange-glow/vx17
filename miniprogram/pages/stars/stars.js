@@ -38,7 +38,6 @@ Page({
       openid:ui.openid
     },
     success:res=>{
-      //console.log("res",res)
       that.setData({
         logs:res.result.data
         
@@ -46,26 +45,27 @@ Page({
       for(let i=0;i<res.result.data.length;i++){
         Film.push(res.result.data[i])
       }
-      //console.log("film",Film)
-      for(let k=0;k<Film.length;k++){
-        for (let i = 0; i < 9; i++) {
-          allFilms.skip(i*20).get().then(res=>{
-            for (let j = 0; j < res.data.length; j++) {
-                if(Film[k].videoId==res.data[j]._id && ids.indexOf(res.data[j]._id)==-1){
-                  res.data[j].points=parseFloat(res.data[j].points.substring(5))
-                  userFilm.push(res.data[j])
-                  ids.push(res.data[j]._id)
-                  len=userFilm.length
-                  that.setData({
-                    final:userFilm
-                  })
-                }
+      for(let j=0;j<Film.length;j++){
+        wx.cloud.callFunction({
+          name: "getVideoById",
+          data: {
+            videoId:Film[j].videoId
+          },
+          success:res=>{
+            console.log("res",res)
+            if(ids.indexOf(res.result.data[0]._id)==-1){
+              ids.push(res.result.data[0]._id)
+              userFilm.push(res.result.data[0])
             }
-          }) 
-          //console.log("ids",ids)
-          //console.log("len",len)
-        }
-       }
+            that.setData({
+              final:userFilm
+            })
+          },
+          fail: res => {
+            console.log("失败")
+          }
+        })
+      }
     },
     fail:res=>{
       console.log("失败")
