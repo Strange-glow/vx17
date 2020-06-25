@@ -55,6 +55,7 @@ Page({
             console.log("res",res)
             if(ids.indexOf(res.result.data[0]._id)==-1){
               ids.push(res.result.data[0]._id)
+              res.result.data[0].points=parseFloat(res.result.data[0].points.substring(5))
               userFilm.push(res.result.data[0])
             }
             that.setData({
